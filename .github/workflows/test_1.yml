@@ -19,15 +19,15 @@ jobs:
         #Install Selenium WebDriver
 
         run: |
-          pip install selenium
-          from selenium import Webdriver
-          from selenium.webdriver.common.by
-          import By from selenium.webdriver.support.ui
-          import WebDriverWait from selenium,webdriver.support
-          import expected_condiitons as EC
+          # pip install selenium
+          # from selenium import Webdriver
+          # from selenium.webdriver.common.by
+          # import By from selenium.webdriver.support.ui
+          # import WebDriverWait from selenium,webdriver.support
+          # import expected_condiitons as EC
 
-          options = webdriver.ChromeOptions()
-          options.add_argument('headless')
+          # options = webdriver.ChromeOptions()
+          # options.add_argument('headless')
 
           driver = webdriver.Chrome(options=options)
           # driver.get('https://radar.cloudflare.com/charts/LargerTopDomainsTable/attachment?id=1257&top=1000000')
@@ -43,7 +43,7 @@ jobs:
           # file_url = file_link.get_attribute('href')
           curl -o file.txt "https://radar.cloudflare.com/charts/LargerTopDomainsTable/attachment?id=1257&top=1000000"
 
-          driver.quit()
+          # driver.quit()
 
       - name: Update file content
       # - uses: actions/checkout@v4
