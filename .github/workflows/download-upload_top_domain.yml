@@ -4,8 +4,9 @@ name: Download file
 
 # Controls when the workflow will run
 on:
-  schedule:
-  - cron:  0 0 */1 * * #Run every alertnate day
+  workflow_dispatch:
+  # schedule:
+  # - cron:  0 0 */1 * * #Run every alertnate day
   
 jobs:
   download-file:
