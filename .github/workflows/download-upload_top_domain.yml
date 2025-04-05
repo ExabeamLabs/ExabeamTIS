@@ -44,11 +44,13 @@ jobs:
 
           driver.quit()
 
-      - name: Upload file to the repository
-      - uses: actions/checkout@v4
-        with : 
-          name: "ranked_domain.txt"
-          path: "https://github.com/ExabeamLabs/ExabeamTIS/blob/main/"
+      - name: Update file content
+      # - uses: actions/checkout@v4
+        run: |
+          cat file.txt > is_ranked_domain.txt
+        # with : 
+        #   name: "file.txt"
+        #   path: "https://github.com/ExabeamLabs/ExabeamTIS/blob/main/"
 
       - name: commit and push file to repository
         run: |
