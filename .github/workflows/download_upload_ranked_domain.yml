@@ -36,6 +36,5 @@ jobs:
           git config --global user.name "shivanand-nehatrao-exa"
           git config --global user.email "shivanand.nehatrao@exabeam.com"
           git add test_domain.txt
-          git checkout file.txt
           git commit -m "uploaded latest ranked domain file"
           git push
