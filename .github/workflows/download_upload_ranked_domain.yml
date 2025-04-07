@@ -4,12 +4,6 @@ name: Download and Upload top 1 million ranked domains
 
 # Controls when the workflow will run
 on:
-  push:
-    branches:
-      - main
-    pull_request:
-      branches:
-      - main
   schedule:
   - cron:  0 * * * * #Run every hour for testing
   
