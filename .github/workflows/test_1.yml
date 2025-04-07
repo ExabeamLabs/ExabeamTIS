@@ -48,7 +48,8 @@ jobs:
       - name: Update file content
       # - uses: actions/checkout@v4
         run: |
-          cat file.txt > is_ranked_domain.txt
+          sed -i '/domain/d' file.txt
+          cat file.txt > test_domain.txt
         # with : 
         #   name: "file.txt"
         #   path: "https://github.com/ExabeamLabs/ExabeamTIS/blob/main/"
