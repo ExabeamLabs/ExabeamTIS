@@ -5,7 +5,7 @@ name: Download and Upload top 1 million ranked domains
 # Controls when the workflow will run
 on:
   schedule:
-    - cron:  0,15,30,45 * * * * #Run every 15 minutes
+    - cron:  0 9 */15 * * # Job will run every 15 days at 9 am
   
 jobs:
   download-file:
