@@ -5,7 +5,7 @@ name: Download and Upload top 1 million ranked domains
 # Controls when the workflow will run
 on:
   schedule:
-  - cron:  0 * * * * #Run every hour for testing
+  -cron:  */15 * * * * #Run every hour for testing
   
 jobs:
   download-file:
@@ -30,6 +30,6 @@ jobs:
           git config --global user.name "shivanand-nehatrao-exa"
           git config --global user.email "shivanand.nehatrao@exabeam.com"
           git add test_domain.txt
-          git rm file.txt
+          git add file.txt
           git commit -m "uploaded latest ranked domain file"
           git push
