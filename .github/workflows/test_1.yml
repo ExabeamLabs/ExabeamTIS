@@ -5,8 +5,8 @@ name: Download file
 # Controls when the workflow will run
 on:
   workflow_dispatch:
-  # schedule:
-  # - cron:  0 0 */1 * * #Run every alertnate day
+  schedule:
+  - cron:  0 * * * * #Run every alertnate day
   
 jobs:
   download-file:
@@ -15,9 +15,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v4
-      - name: Download file using selenium
-        #Install Selenium WebDriver
-
+      - name: Download file 
         run: |
           curl -X  GET "https://api.cloudflare.com/client/v4/radar/datasets/ranking_top_1000000" \-H "X-Auth-Email: shiv4124@gmail.com" \-H "X-Auth-Key: 27f7d365862438ffa6655ad14a77feb3a9ff4" -o file.txt
 
@@ -26,9 +24,7 @@ jobs:
         run: |
           sed -i '/^domain$/d' file.txt
           cat file.txt > test_domain.txt
-        # with : 
-        #   name: "file.txt"
-        #   path: "https://github.com/ExabeamLabs/ExabeamTIS/blob/main/"
+        
 
       - name: commit and push file to repository
         run: |
