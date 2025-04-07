@@ -58,6 +58,6 @@ jobs:
         run: |
           git config --global user.name "shivanand-nehatrao-exa"
           git config --global user.email "shivanand.nehatrao@exabeam.com"
-          git add is_ranked_domain.txt
+          git add test_domain.txt
           git commit -m "uploaded latest ranked domain file"
           git push
