@@ -13,11 +13,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download file 
         run: |
-          curl -X  GET "https://api.cloudflare.com/client/v4/radar/datasets/ranking_top_1000000" \-H "X-Auth-Email: shiv4124@gmail.com" \-H "X-Auth-Key: 27f7d365862438ffa6655ad14a77feb3a9ff4" -o test_domain.txt
+          curl -X  GET "https://api.cloudflare.com/client/v4/radar/datasets/ranking_top_1000000" \-H "X-Auth-Email: shiv4124@gmail.com" \-H "X-Auth-Key: 27f7d365862438ffa6655ad14a77feb3a9ff4" -o is_ranked_domain.txt
 
       - name: Update file content
         run: |
-          sed -i '/^domain$/d' test_domain.txt
+          sed -i '/^domain$/d' is_ranked_domain.txt
           #cat file.txt > test_domain.txt
         
 
@@ -25,6 +25,6 @@ jobs:
         run: |
           git config --global user.name "shivanand-nehatrao-exa"
           git config --global user.email "shivanand.nehatrao@exabeam.com"
-          git add test_domain.txt
+          git add is_ranked_domain.txt
           git commit -m "uploaded latest ranked domain file"
           git push
