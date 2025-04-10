@@ -4,7 +4,7 @@ on:
   schedule:
     #- cron:  0,15,30,45 * * * * # job will run for every 15 mins 
     #- cron:  0 9 */15 * * # Job will run every 15 days at 9 am
-    - cron: 0 11 * * *
+    - cron: 30 5 * * *
   
 jobs:
   download-file:
