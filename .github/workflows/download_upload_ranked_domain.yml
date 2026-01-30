@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download file 
         run: |
-          curl -X  GET "https://api.cloudflare.com/client/v4/radar/datasets/ranking_top_1000000" \-H "X-Auth-Email: ${vars.EMAIL}" \-H "X-Auth-Key: ${secrets.SHIV}" -o is_ranked_domain.txt
+          curl -X  GET "https://api.cloudflare.com/client/v4/radar/datasets/ranking_top_1000000" \-H "X-Auth-Email: ${{secrets.EMAIL}}" \-H "X-Auth-Key: ${{secrets.SHIV}}" -o is_ranked_domain.txt
 
       - name: Update file content
         run: |
