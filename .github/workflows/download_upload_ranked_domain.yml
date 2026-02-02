@@ -4,6 +4,8 @@ on:
   schedule:
     - cron:  '*/15 * * * *' 
     #- cron: 30 5 * * 1  # this would run on every monday at 11 Am IST
+  workflow_dispatch:
+    
   
 jobs:
   download-file:
