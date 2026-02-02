@@ -23,6 +23,7 @@ jobs:
 
       - name: commit and push file to repository
         run: |
+          git config --list
           git config --global user.email "shivanand.nehatrao@exabeam.com"
           git config --global user.name  "shivanand-nehatrao-exa"
           git add is_ranked_domain.txt
