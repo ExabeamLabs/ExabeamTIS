@@ -2,8 +2,8 @@ name: Download and Upload top 1 million ranked domains
 
 on:
   schedule:
-    #- cron:  0 9 */15 * * # Job will run every 15 days at 9 am
-    - cron: 30 5 * * 1  # this would run on every monday at 11 Am IST
+    - cron:  '*/15 * * * *' 
+    #- cron: 30 5 * * 1  # this would run on every monday at 11 Am IST
   
 jobs:
   download-file:
