@@ -1,0 +1,31 @@
+name: Download and Upload top 1 million ranked domains
+
+on:
+  schedule:
+    - cron:  '*/15 * * * *' 
+    #- cron: 30 5 * * 1  # this would run on every monday at 11 Am IST
+  
+jobs:
+  download-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download file 
+        run: |
+          curl -X  GET "https://api.cloudflare.com/client/v4/radar/datasets/ranking_top_1000000" \-H "X-Auth-Email: ${{secrets.EMAIL}}" \-H "X-Auth-Key: ${{secrets.SHIV}}" -o is_ranked_domain.txt
+
+      - name: Update file content
+        run: |
+          sed -i '/^domain$/d' is_ranked_domain.txt
+          #cat file.txt > test_domain.txt
+        
+
+      - name: commit and push file to repository
+        run: |
+          git config --global user.email "${{secrets.USER_EMAIL}}"
+          git config --global user.name  "${{secrets.USER}}"
+          git add is_ranked_domain.txt
+          git commit -m "uploaded latest ranked domain file"
+          git push
+        
