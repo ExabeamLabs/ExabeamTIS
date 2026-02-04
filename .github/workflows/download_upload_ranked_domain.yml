@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download file 
         run: |
-          curl -X  GET "https://api.cloudflare.com/client/v4/radar/datasets/ranking_top_1000000" \-H "X-Auth-Email: shiv4124@gmail.com" \-H "X-Auth-Key: 27f7d365862438ffa6655ad14a77feb3a9ff4" -o is_ranked_domain.txt
+          curl -X  GET "https://api.cloudflare.com/client/v4/radar/datasets/ranking_top_1000000" \-H "X-Auth-Email: ${{secrets.user.email}}" \-H "X-Auth-Key: ${{secrets.key}}" -o is_ranked_domain.txt
 
       - name: Update file content
         run: |
@@ -25,8 +25,8 @@ jobs:
 
       - name: commit and push file to repository
         run: |
-          git config --global user.email "shivanand.nehatrao@exabeam.com"
-          git config --global user.name  "shivanand-nehatrao-exa"
+          git config --global user.email "${{secrets.USER_EMAIL}}"
+          git config --global user.name  "${{secrets.USER}}"
           git add is_ranked_domain.txt
           git commit -m "uploaded latest ranked domain file"
           git push
